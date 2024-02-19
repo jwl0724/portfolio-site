@@ -7,7 +7,6 @@ async function renderCard(cardContent, container) {
         let content = $('<div />', {html:rawContent});
 
         // modify template to show passed in content
-        console.log(cardContent[6]);
         $(content).find('.cardTemplateTitle').html(cardContent[0]);
         $(content).find('.cardTemplateSubtitle').html(cardContent[1]);
         $(content).find('.cardTemplateDescription').html(cardContent[4]);
