@@ -12,6 +12,6 @@ async function renderCard(cardContent, container) {
         $(content).find('.cardTemplateDescription').html(cardContent[4]);
         $(content).find('.cardTemplateStaticImage').attr("src", cardContent[2])
         $(content).find('.cardTemplateDynamicImage').attr("src", cardContent[3]);
-        container.innerHTML = content.html();
+        container.innerHTML += content.html();
     });
 }
