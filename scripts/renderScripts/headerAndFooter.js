@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    $('#header').load('./templates/headerTemplate.html');
-    $('#footer').load('./templates/footerTemplate.html');
+document.addEventListener('DOMContentLoaded', async () => {
+    document.getElementById('header').innerHTML = await loadHTML('templates/headerTemplate.html');
+    document.getElementById('footer').innerHTML = await loadHTML('templates/footerTemplate.html');
 })
