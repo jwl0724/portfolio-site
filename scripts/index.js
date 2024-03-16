@@ -6,15 +6,15 @@ const swingProjectContent = ['Swing', 'Endless Runner Arcade Game', './images/sw
 const perfectDarknessProjectContent = ['Perfect Darkness', 'Turn-based Horror Game', 'TODO', 'TODO', 
 'Perfect Darkness (Terrible name I know...) is a horror game I made as the final project for one of my courses at BCIT. It is turned-based game where you are tasked with eliminating a monster that is significantly stronger than you. You must scavage for loot in pure darkness in order to get strong enough to kill the monster, all while the creature is roaming about in the building you are in.'];
 
-const unityTutorialContent = ['Kitchen Chaos Tutorial (In Development)', 'Co-op Party Game', 'TODO', 'TODO',
-'Kitchen Chaos Tutorial is a Unity game project tutorial I have been following as a starting point to begin my own projects in Unity, credits to Code Monkey for the tutorial and art assets (https://unitycodemonkey.com/).'];
-
 const lapsProjectContent = ['LAPS', 'Live Bus Tracking Webapp', 'TODO', 'TODO',
 'LAPS is a webapp that provides real-time bus locations using TransLink\'s API. It is aimed at providing transit goers agency in their decision making process.'];
 
 const discordBotProjectContent = ['Schedule Bot (In Development)', 'Discord Schedule Plan Bot', 'TODO', 'TODO',
 'Schedule Bot is a Discord bot I created to help organize due dates at school. The bot aims to consolidate features useful for students into one place. Features include due date reminders, notes saving, checklist planners, etc.'];
 
+const pawsitiveHackathonProjectContent = [ 'PAWsitive', 'Mobile Webapp Game', './images/PAWsitiveHomePage.png', 'TODO',
+'PAWsitive is a project submission for QDS Hackathon 2024, it was designed to help promote the development of healthy routines within players by gamifying such behaviors. The game presents dailies for players, in which players do randomly generated healthy activities to get in-game currency. This currency can then be spent within either an in-game shop, or players can choose to use the currency for gacha.'
+]
 
 // TODO:
 // Populate each card dynamically using info in tuple
@@ -22,11 +22,11 @@ const discordBotProjectContent = ['Schedule Bot (In Development)', 'Discord Sche
 // Have image in the background of card, and text over it
 // Have image start playing gif when hovered over it
 // Complete header and footer CSS
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const cardContainer = document.getElementById('container');
-    renderCard(swingProjectContent, cardContainer);
-    renderCard(perfectDarknessProjectContent, cardContainer);
-    renderCard(unityTutorialContent, cardContainer);
-    renderCard(lapsProjectContent, cardContainer);
-    renderCard(discordBotProjectContent, cardContainer);
+    await renderCard(swingProjectContent, cardContainer);
+    await renderCard(pawsitiveHackathonProjectContent, cardContainer);
+    await renderCard(perfectDarknessProjectContent, cardContainer);
+    await renderCard(lapsProjectContent, cardContainer);
+    await renderCard(discordBotProjectContent, cardContainer);
 })
