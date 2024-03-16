@@ -23,10 +23,28 @@ const pawsitiveHackathonProjectContent = [ 'PAWsitive', 'Mobile Webapp Game', '.
 // Have image start playing gif when hovered over it
 // Complete header and footer CSS
 document.addEventListener('DOMContentLoaded', async () => {
+
+    // hide DOM elements when they are still not done loading
+    document.body.style.backgroundColor = '#CBD5E1';
+    document.body.style.visibility = 'hidden';
     const cardContainer = document.getElementById('container');
+
+    // render the cards
     await renderCard(swingProjectContent, cardContainer);
     await renderCard(pawsitiveHackathonProjectContent, cardContainer);
     await renderCard(perfectDarknessProjectContent, cardContainer);
     await renderCard(lapsProjectContent, cardContainer);
     await renderCard(discordBotProjectContent, cardContainer);
+
+    // set each card description to hidden for hover effect
+    let allCardDescription = document.querySelectorAll('.cardTemplateDescription');
+    allCardDescription.forEach((card) => {
+        card.style.display = 'none';
+
+        // add hover effect for description
+        addHoverEffect(card.closest('.cardTemplateLink'), card, showDescription, hideDescription);
+    })
+    
+    // show DOM elements once everything is done loading
+    fadeIn(document.body, "visible", 0.025);
 })
