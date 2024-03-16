@@ -12,8 +12,20 @@ async function renderCard(cardContent, container) {
     template.querySelector('.cardTemplateTitle').innerHTML = cardContent[0];
     template.querySelector('.cardTemplateSubtitle').innerHTML = cardContent[1];
     template.querySelector('.cardTemplateDescription').innerHTML = cardContent[4];
-    template.querySelector('.cardTemplateStaticImage').src = cardContent[2];
-    template.querySelector('.cardTemplateDynamicImage').src = cardContent[3];
+    
+    // create unique id for card
+    let templateDiv = template.querySelector('.cardTemplateLink');
+    templateDiv.id = cardContent[0];
+    
+    // set background image and width and height of div based on image
+    let imgDimensions = await getImageDimensions(cardContent[2]);
+    if (imgDimensions != null) {
+        templateDiv.style.backgroundImage = `url(${cardContent[2]})`;
+        templateDiv.style.width = imgDimensions.width;
+        templateDiv.style.height = imgDimensions.height;
+    }
+
+    // TODO: add hover effect where image is replaced with gif when hovered over
 
     // append to container
     container.innerHTML += template.outerHTML;
