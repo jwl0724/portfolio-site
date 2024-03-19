@@ -18,11 +18,8 @@ const pawsitiveHackathonProjectContent = ['PAWsitive', 'Mobile Webapp Game', './
 ]
 
 // TODO:
-// Populate each card dynamically using info in tuple
-// Get screencap of every project with a brief gif of how it works
-// Have image in the background of card, and text over it
+// Get gif of PAWsitive project
 // Have image start playing gif when hovered over it
-// Complete header and footer CSS
 document.addEventListener('DOMContentLoaded', async () => {
 
     // hide DOM elements when they are still not done loading
@@ -43,16 +40,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     await renderCard(perfectDarknessProject, cardContainer);
     await renderCard(lapsProject, cardContainer);
     await renderCard(discordBotProject, cardContainer);
-
-    // set hover effects for every card
-    let allCardDescription = document.querySelectorAll('.cardTemplateDescription');
-    let allCardBackgroundImages = document.querySelectorAll('.cardTemplateStaticImage');
-    allCardDescription.forEach((card) => {
-        card.style.display = 'none';
-
-        // add hover effect for description
-        addHoverEffect(card.closest('.cardTemplateLink'), card, showDescription, hideDescription);
-    })
     
     // show DOM elements once everything is done loading
     fadeIn(document.body, "visible", 0.025);
