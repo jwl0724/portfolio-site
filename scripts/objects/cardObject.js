@@ -15,6 +15,8 @@ class card {
         // if there is no gif, set it to null
         if (projectDataArray[3] == '') {
             this.projectImageGif = null;
+        } else {
+            this.projectImageGif = projectDataArray[3];
         }
     }
 }
