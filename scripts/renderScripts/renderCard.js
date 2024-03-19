@@ -8,25 +8,43 @@ async function renderCard(cardObject, container) {
     let parser = new DOMParser();
     let template = parser.parseFromString(rawTemplate, 'text/html').body;
     
+    // set card parts as variables
+    let cardTitle = template.querySelector('.cardTemplateTitle');
+    let cardSubtitle = template.querySelector('.cardTemplateSubtitle');
+    let cardDescription = template.querySelector('.cardTemplateDescription');
+    let parentNode = template.querySelector('.cardTemplateLink');
+    let cardDiv = template.querySelector('.cardTemplateDiv');
+    let cardHeader = template.querySelector('.cardTemplateHeader');
+
     // input parameters
-    template.querySelector('.cardTemplateTitle').innerHTML = cardObject.projectName;
-    template.querySelector('.cardTemplateSubtitle').innerHTML = cardObject.projectGenre;
-    template.querySelector('.cardTemplateDescription').innerHTML = cardObject.projectDescription;
-    
+    cardTitle.innerHTML = cardObject.projectName;
+    cardSubtitle.innerHTML = cardObject.projectGenre;
+    cardDescription.innerHTML = cardObject.projectDescription;
+
     // create unique id for card
-    let templateDiv = template.querySelector('.cardTemplateLink');
-    templateDiv.id = cardObject.projectName;
+    cardDiv.id = cardObject.projectName;
     
     // set background image and width and height of div based on image
     let imgDimensions = await getImageDimensions(cardObject.projectImageStatic);
     if (imgDimensions != null) {
-        templateDiv.style.backgroundImage = `url(${cardObject.projectImageStatic})`;
-        templateDiv.style.width = imgDimensions.width;
-        templateDiv.style.height = imgDimensions.height;
+        parentNode.style.backgroundImage = `url(${cardObject.projectImageStatic})`;
+        parentNode.style.width = imgDimensions.width;
+        parentNode.style.height = imgDimensions.height;
     }
 
-    // TODO: add hover effect where image is replaced with gif when hovered over
+    // initialize hover effects
 
-    // append to container
-    container.innerHTML += template.outerHTML;
+    // hover effects for card description
+    cardDescription.style.display = 'none';
+    addHoverEffect(template.childNodes[0], cardDescription, cardObject, showDescription, hideDescription);
+
+    // hover effects for background img to gif
+    addHoverEffect(template.childNodes[0], parentNode, cardObject, showGif, showStatic);
+    
+
+    // hover effects for card image
+
+
+    // append html element into container
+    container.appendChild(template.childNodes[0]);
 }
