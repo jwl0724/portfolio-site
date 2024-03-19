@@ -55,12 +55,3 @@ async function getImageDimensions(filepath) {
         img.src = filepath;
     })
 }
-
-function addHoverEffect(parentNode, childNode, enterEffect, leaveEffect) {
-    parentNode.addEventListener('mouseenter', () => {
-        enterEffect(childNode);
-    });
-    parentNode.addEventListener('mouseleave', () => {
-        leaveEffect(childNode);
-    });
-}
