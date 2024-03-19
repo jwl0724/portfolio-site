@@ -32,7 +32,7 @@ async function renderCard(cardObject, container) {
         parentNode.style.height = imgDimensions.height;
     }
 
-    // initialize hover effects
+    // SECTION: initialize hover effects
 
     // hover effects for card description
     cardDescription.style.display = 'none';
@@ -40,6 +40,7 @@ async function renderCard(cardObject, container) {
 
     // hover effects for background img to gif
     addHoverEffect(template.childNodes[0], parentNode, cardObject, showGif, showStatic);
+    
     
 
     // hover effects for card image
