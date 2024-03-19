@@ -9,7 +9,6 @@ function hideDescription(element) {
 }
 
 function showGif(element, cardObject) {
-    console.log(cardObject);
     if (cardObject.projectImageGif !== null) {
         element.style.backgroundImage = `url(${cardObject.projectImageGif})`;
     }
