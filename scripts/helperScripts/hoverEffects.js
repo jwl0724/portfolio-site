@@ -11,6 +11,8 @@ function hideDescription(element) {
 function showGif(element, cardObject) {
     if (cardObject.projectImageGif !== null) {
         element.style.backgroundImage = `url(${cardObject.projectImageGif})`;
+        element.style.backgroundSize = 'cover';
+        element.style.backgroundPosition = 'center';
     }
 }
 
