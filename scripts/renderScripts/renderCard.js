@@ -1,6 +1,6 @@
 // CARD_CONTENT FORMAT: projectName, projectGenre, projectImageStatic, projectImageGif, projectDescription
 
-async function renderCard(cardContent, container) {
+async function renderCard(cardObject, container) {
     // fetch template html
     let rawTemplate = await loadHTML('../../templates/card.html');
 
@@ -9,18 +9,18 @@ async function renderCard(cardContent, container) {
     let template = parser.parseFromString(rawTemplate, 'text/html').body;
     
     // input parameters
-    template.querySelector('.cardTemplateTitle').innerHTML = cardContent[0];
-    template.querySelector('.cardTemplateSubtitle').innerHTML = cardContent[1];
-    template.querySelector('.cardTemplateDescription').innerHTML = cardContent[4];
+    template.querySelector('.cardTemplateTitle').innerHTML = cardObject.projectName;
+    template.querySelector('.cardTemplateSubtitle').innerHTML = cardObject.projectGenre;
+    template.querySelector('.cardTemplateDescription').innerHTML = cardObject.projectDescription;
     
     // create unique id for card
     let templateDiv = template.querySelector('.cardTemplateLink');
-    templateDiv.id = cardContent[0];
+    templateDiv.id = cardObject.projectName;
     
     // set background image and width and height of div based on image
-    let imgDimensions = await getImageDimensions(cardContent[2]);
+    let imgDimensions = await getImageDimensions(cardObject.projectImageStatic);
     if (imgDimensions != null) {
-        templateDiv.style.backgroundImage = `url(${cardContent[2]})`;
+        templateDiv.style.backgroundImage = `url(${cardObject.projectImageStatic})`;
         templateDiv.style.width = imgDimensions.width;
         templateDiv.style.height = imgDimensions.height;
     }
