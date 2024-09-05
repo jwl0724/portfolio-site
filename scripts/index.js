@@ -29,6 +29,10 @@ const touhouAtHomeContent = ['Touhou At Home', 'PC Bullet Hell Shooter', './imag
     'Touhou At Home is a personal project to learn how to use the Godot engine in a 2D setting. The game is inspired by the Touhou series of games, where the goal is to dodge as many bullets as possible and survive as long as possible.'
 ];
 
+const terrainGenerator = ['Terrain Generator', 'Procedural Terrain Generator', './images/terrainGenerator.png', './images/terrainGenerator.gif',
+    'Terrain Generator is a proof of concept project I made to learn hexagonal grid generation using noise textures. The project is a simple app where you click a button and it generates tiles based on the noise texture.'
+];
+
 const duckHuntAtHomeContent = ['Duck Hunt At Home', 'PC FPS Shooter', './images/duckHuntAtHome.png', './images/duckHuntAtHome.gif',
     'Duck Hunt At Home is a personal project of mine to help me learn the Godot game engine in a 3D setting. The goal of the game is to shoot as many ducks as possible. The game is inspired by the classic NES game.'
 ];
@@ -59,6 +63,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let pawsitiveHackathonProject = new card(pawsitiveHackathonProjectContent);
     let deadNet = new card(deadNetContent);
     let touhouAtHome = new card(touhouAtHomeContent);
+    let terrainGeneratorProject = new card(terrainGenerator);
     let duckHuntAtHome = new card(duckHuntAtHomeContent);
 
     // render the cards using card objects
@@ -69,6 +74,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await renderCard(discordBotProject, cardContainer);
     await renderCard(deadNet, cardContainer);
     await renderCard(touhouAtHome, cardContainer);
+    await renderCard(terrainGeneratorProject, cardContainer);
     await renderCard(duckHuntAtHome, cardContainer);
     
     // show DOM elements once everything is done loading
