@@ -44,6 +44,7 @@ const duckHuntAtHomeContent = ['Duck Hunt At Home', 'PC FPS Shooter', './images/
 // get gif of discord bot
 // get gif of touhou at home
 // Get gif of PAWsitive project
+// fix issue where gif animation is not resetting
 // Have image start playing gif when hovered over it
 // make cards each have a set size, and fit the image into that size
 // make another page to showcase software vs developed games
