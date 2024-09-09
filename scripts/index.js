@@ -29,7 +29,7 @@ const touhouAtHomeContent = ['Touhou At Home', 'PC Bullet Hell Shooter', './imag
     'Touhou At Home is a personal project to learn how to use the Godot engine in a 2D setting. The game is inspired by the Touhou series of games, where the goal is to dodge as many bullets as possible and survive as long as possible.'
 ];
 
-const terrainGenerator = ['Terrain Generator', 'Procedural Terrain Generator', './images/terrainGenerator.png', './images/terrainGenerator.gif',
+const terrainGeneratorContent = ['Terrain Generator', 'Procedural Terrain Generator', './images/terrainGenerator.png', './images/terrainGenerator.gif',
     'Terrain Generator is a proof of concept project I made to learn hexagonal grid generation using noise textures. The project is a simple app where you click a button and it generates tiles based on the noise texture.'
 ];
 
@@ -62,10 +62,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     let lapsProject = new card(lapsProjectContent);
     let discordBotProject = new card(discordBotProjectContent);
     let pawsitiveHackathonProject = new card(pawsitiveHackathonProjectContent);
-    let deadNet = new card(deadNetContent);
-    let touhouAtHome = new card(touhouAtHomeContent);
-    let terrainGeneratorProject = new card(terrainGenerator);
-    let duckHuntAtHome = new card(duckHuntAtHomeContent);
+    let deadNetProject = new card(deadNetContent);
+    let touhouAtHomeProject = new card(touhouAtHomeContent);
+    let terrainGeneratorProject = new card(terrainGeneratorContent);
+    let duckHuntAtHomeProject = new card(duckHuntAtHomeContent);
 
     // render the cards using card objects
     await renderCard(swingProject, cardContainer);
@@ -73,10 +73,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     await renderCard(perfectDarknessProject, cardContainer);
     await renderCard(lapsProject, cardContainer);
     await renderCard(discordBotProject, cardContainer);
-    await renderCard(deadNet, cardContainer);
-    await renderCard(touhouAtHome, cardContainer);
+    await renderCard(deadNetProject, cardContainer);
+    await renderCard(touhouAtHomeProject, cardContainer);
     await renderCard(terrainGeneratorProject, cardContainer);
-    await renderCard(duckHuntAtHome, cardContainer);
+    await renderCard(duckHuntAtHomeProject, cardContainer);
     
     // show DOM elements once everything is done loading
     fadeIn(document.body, "visible", 0.025);
